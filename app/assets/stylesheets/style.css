@@ -118,7 +118,7 @@
 }
 
 /* ページみぎフォーム */
-form {
+.form {
   height: 90px;
   background-color: #DDDDDD;
   padding: 20px 40px;
