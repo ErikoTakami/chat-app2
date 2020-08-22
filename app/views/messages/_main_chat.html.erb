@@ -13,26 +13,22 @@
   </div>
   <div class="main-chat">
     <div class="chat-container">
-      <div class="chat-content">
+    <%= render partial: 'message', collection: @messages %>
+      <%# <div class="chat-content">
         <div class="content-top">
-          <div class="chat-username">Tom</div>
-          <div class="chat-day">2020/8/21(Fri) 11:35:30</div>
+          <div class="chat-username">
+          
+          </div>
+          <div class="chat-day">
+          
+          </div>
         </div>
         <div class="content-bottom">
-          <div class="chat-text">おはよう</div>
+          <div class="chat-text">
+          
+          </div>
         </div>
-      </div>
-    </div>
-    <div class="chat-container">
-      <div class="chat-content">
-        <div class="content-top">
-          <div class="chat-username">Tom</div>
-          <div class="chat-day">2020/8/21(Fri) 11:35:30</div>
-        </div>
-        <div class="content-bottom">
-          <div class="chat-text">おはよう</div>
-        </div>
-      </div>
+      </div> %>
     </div>
   </div>
   <%# <form class="form"> %>
