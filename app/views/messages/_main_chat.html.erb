@@ -2,7 +2,7 @@
   <div class="main-header">
     <div class="left-header">
       <div class="chat-name">
-        <h2>hogefuga</h2>
+        <%= @room.name %>
       </div>
     </div>
     <div class="right-header">
@@ -14,21 +14,6 @@
   <div class="main-chat">
     <div class="chat-container">
     <%= render partial: 'message', collection: @messages %>
-      <%# <div class="chat-content">
-        <div class="content-top">
-          <div class="chat-username">
-          
-          </div>
-          <div class="chat-day">
-          
-          </div>
-        </div>
-        <div class="content-bottom">
-          <div class="chat-text">
-          
-          </div>
-        </div>
-      </div> %>
     </div>
   </div>
   <%# <form class="form"> %>
