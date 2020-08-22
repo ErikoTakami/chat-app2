@@ -2,47 +2,33 @@
   <div class="main-header">
     <div class="left-header">
       <div class="chat-name">
-        <h2>hogefuga</h2>
+        <%= @room.name %>
       </div>
     </div>
     <div class="right-header">
       <div class="chat-end-btn">
-        <a href="#">チャットを終了する</a>
+      <%= link_to 'チャットを終了する', room_path(@room), method: :delete %>
       </div>
     </div>
   </div>
   <div class="main-chat">
     <div class="chat-container">
-      <div class="chat-content">
-        <div class="content-top">
-          <div class="chat-username">Tom</div>
-          <div class="chat-day">2020/8/21(Fri) 11:35:30</div>
-        </div>
-        <div class="content-bottom">
-          <div class="chat-text">おはよう</div>
-        </div>
-      </div>
-    </div>
-    <div class="chat-container">
-      <div class="chat-content">
-        <div class="content-top">
-          <div class="chat-username">Tom</div>
-          <div class="chat-day">2020/8/21(Fri) 11:35:30</div>
-        </div>
-        <div class="content-bottom">
-          <div class="chat-text">おはよう</div>
-        </div>
-      </div>
+    <%= render partial: 'message', collection: @messages %>
     </div>
   </div>
-  <form class="form">
+  <%# <form class="form"> %>
+  <%= form_with model: [@room, @message], html: {class: "form"}, local: true do |f|  %>
     <div class="new-message">
-      <input class="form-message" type="text" placeholder="type a message">
+      <%# <input class="form-message" type="text" placeholder="type a message"> %>
+      <%= f.text_field :content, class: 'form-message', placeholder: 'type a message' %>
       <label class="form-image">
         <span>画像</span>
-        <input type="file" class="hidden">
+        <%= f.file_field :image, class: 'hidden' %>
+        <%# <input type="file" class="hidden"> %>
       </label>
     </div>
-    <input class="submit-btn" type="submit" value="送信">
-  </form>
+    <%# <input class="submit-btn" type="submit" value="送信"> %>
+    <%= f.submit '送信', class: 'submit-btn' %>
+  <%# </form> %>
+  <% end %>
 </div>
